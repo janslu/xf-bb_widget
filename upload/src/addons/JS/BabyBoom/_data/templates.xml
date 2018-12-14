@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="widget_js_babyboom_news" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="widget_js_babyboom_news.css" />
+
+<div class="block">
+	<div class="block-container">
+		<h3 class="block-minorHeader">{$title}</h3>
+		<div class="block-body">
+			<div class="block-row">
+				<xf:include template="widget_js_babyboom_news_items" />
+			</div>
+		</div>
+	</div>
+</div>]]></template>
+  <template type="public" title="widget_js_babyboom_news.css" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[div.recent_post {
+	position: relative;
+	padding-bottom: 1em;
+}
+
+span.wordpress_title a {
+	color: #8c8c8c;
+}
+
+span.wordpress_title:after {
+    content:"\a";
+    white-space: pre;
+}
+
+div.recent_post a {
+	color: #2577b1;
+    text-decoration: none;
+	font-weight: 400;
+}
+
+span.wordpress_author {
+	margin-top:5px;
+	padding-left: 5px;
+	color: #8c8c8c;
+	font-size: small;
+}
+
+div.thumbnail img {
+	width: 37px;
+    height: 37px;
+    float: left;
+    margin-top: 2px;
+	margin-right: 5px;
+	margin-left: -2px;
+    border: 1px solid rgb(230, 230, 230);
+	border-radius: 3px;
+    padding: 2px;
+}
+
+div.excerpt {
+	min-height: 20px;
+	padding-top: 10px;
+	font-style: italic;
+}
+
+div.trn_avatar {
+	float: left;
+	padding-right: 5px;
+}]]></template>
+  <template type="public" title="widget_js_babyboom_news_items" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:foreach loop="$latestposts" value="$latestpost">
+
+	<div class="recent_post">
+		<xf:if is="{$latestpost.postThumbnailUrl} != '' ">
+			<div class="thumbnail"><img src="{$latestpost.postThumbnailUrl}"></div>
+		</xf:if>
+		
+		<xf:if is="{$latestpost.postThumbnailUrl} == '' ">
+			<div class="trn_avatar"><xf:avatar user="$latestpost.postAuthorUser" size="xs" ></xf:avatar></div>
+		</xf:if>
+
+		<span class="wordpress_title"><a href="{$latestpost.postUrl}">{$latestpost.postTitle}</a></span>
+		
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>{{ phrase('by_user_x', {'name': $latestpost.postAuthor}) }}</li>
+					<li><xf:date time="{$latestpost.postDate}" /></li>
+				</ul>
+			</div>
+
+		<xf:if is="{$latestpost.postExcerpt} !='' ">
+			<div class="excerpt">{$latestpost.postExcerpt}</div>
+		</xf:if>
+
+	</div>
+	
+</xf:foreach>]]></template>
+</templates>
