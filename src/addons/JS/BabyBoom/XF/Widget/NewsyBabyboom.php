@@ -20,7 +20,7 @@ class NewsyBabyboom extends AbstractWidget {
    
 	public function render() {
       $cachetimeout = $this->options['cachetimeout'];
-      $title = 'Nowości?';
+      $title = null;
       $key = $this->widgetConfig->widgetKey.''.$this->widgetConfig->widgetId;
       if ($cache = \XF::app()->cache()) {
          $content = $cache->fetch($key);

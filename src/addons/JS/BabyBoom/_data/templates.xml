@@ -4,7 +4,9 @@
 
 <div class="block">
 	<div class="block-container">
-		<h3 class="block-minorHeader">{$title}</h3>
+      <xf:if is="$title">
+		   <h3 class="block-minorHeader">{$title}</h3>
+      </xf:if>
       <xf:if is="$wrapbody">
          <div class="block-body">
             <div class="block-row">
@@ -67,8 +69,8 @@ div.trn_avatar {
 }]]></template>
 <template type="admin" title="widget_def_options_js_babyboom_newsy" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<hr class="formRowSep" />
 
-<xf:numberboxrow name="options[cachetimeout]" value="{$options.cachetimeout}" min="0"
-				 label="{{ phrase('enable_cache_and_cache_for_x_minutes') }}" />
+<xf:numberboxrow name="options[cachetimeout]" value="{$options.cachetimeout}" min="0" label="{{ phrase('enable_cache_and_cache_for_x_minutes') }}" />
+
 <xf:textboxrow label="{{ phrase('option.JsBabyboomNewsUrl') }}" name="options[url]" value="{$options.url}" placeholder="https://...">
 <xf:explain>{{ phrase('option_explain.JsBabyboomNewsUrl') }}</xf:explain>
 	</xf:textboxrow>
