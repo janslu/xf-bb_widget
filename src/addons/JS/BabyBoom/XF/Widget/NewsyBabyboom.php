@@ -19,15 +19,22 @@ class NewsyBabyboom extends AbstractWidget {
    ];
    
 	public function render() {
-      $cachetimeout = $this->options['cachetimeout'];
+      //cache in minutes
+      $cachetimeout = $this->options['cachetimeout'] * 60;
+
+      //if title is not set - we don't render h3 wrapper in template
       $title = null;
+
+      //key is being used for cache purposes
       $key = $this->widgetConfig->widgetKey.''.$this->widgetConfig->widgetId;
+
       if ($cache = \XF::app()->cache()) {
          $content = $cache->fetch($key);
-         if ($content) {
-               $content = $content.'<-- z cache -->';
-         } else {
+         if (!$content) {
+               //url from settings
                $absoluteUrl = $this->options['url'];
+
+               //gazzle client provided by XF
                $client = $this->app->http()->client();
                try {
                   $content = $client->get($absoluteUrl)->getBody()->getContents();
@@ -36,7 +43,7 @@ class NewsyBabyboom extends AbstractWidget {
                   }
                   $content = $content.'<-- do cache -->';
                } catch(\GuzzleHttp\Exception\RequestException $e) {
-                  \XF::dump($e);
+                  //\XF::dump($e);
                }
          }
       } else {
@@ -48,7 +55,7 @@ class NewsyBabyboom extends AbstractWidget {
          'wrapbody' => $this->options['wrapbody'],
 			'newsy' => $content,
       ];
-      //\XF::dump($viewParams);
+
 		return $this->renderer( 'widget_js_babyboom_news', $viewParams );
 	}
 
