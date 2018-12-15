@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
+  <phrase title="option.JsBabyBoomNewsWrapbody" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Wrap klasy .block-body wokół treści?]]></phrase>
   <phrase title="option.JsBabyboomNewsTytul" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Tytuł widgeta BB News]]></phrase>
   <phrase title="option.JsBabyboomNewsUrl" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Podaj adres url]]></phrase>
+  <phrase title="option_explain.JsBabyBoomNewsWrapbody" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Jeśli wyłączone, body nie będzie miało wrapa i odstępu wokół.]]></phrase>
   <phrase title="option_explain.JsBabyboomNewsTytul" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Podaj tytuł]]></phrase>
   <phrase title="option_explain.JsBabyboomNewsUrl" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Podaj adres url włączając https://]]></phrase>
   <phrase title="option_group.jsBbNews" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[BB Newsy]]></phrase>
@@ -10,7 +12,4 @@
   <phrase title="widget_def_desc.js_babyboom_newsy" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Wyświetla treść z typo3]]></phrase>
   <phrase title="widget_pos.js_babyboom_view_sidebar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[BB Newsy sidebar]]></phrase>
   <phrase title="widget_pos_desc.js_babyboom_view_sidebar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Widok dla widgeta.]]></phrase>
-   <phrase title="option.JsBabyBoomNewsWrapbody" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Wrap klasy .block-body wokół treści?]]></phrase>
-   <phrase title="option_explain.JsBabyBoomNewsWrapbody" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Jeśli wyłączone, body nie będzie miało wrapa i odstępu wokół.]]></phrase>
-  
 </phrases>

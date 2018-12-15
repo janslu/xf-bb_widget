@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
+  <template type="admin" title="widget_def_options_js_babyboom_newsy" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<hr class="formRowSep" />
+
+<xf:numberboxrow name="options[cachetimeout]" value="{$options.cachetimeout}" min="0" label="{{ phrase('enable_cache_and_cache_for_x_minutes') }}" />
+
+<xf:textboxrow label="{{ phrase('option.JsBabyboomNewsUrl') }}" name="options[url]" value="{$options.url}" placeholder="https://...">
+<xf:explain>{{ phrase('option_explain.JsBabyboomNewsUrl') }}</xf:explain>
+	</xf:textboxrow>
+<xf:checkboxrow>
+	<xf:option name="options[wrapbody]" selected="{$options.wrapbody}"
+		hint="{{ phrase('option_explain.JsBabyBoomNewsWrapbody') }}">
+		<xf:label>{{ phrase('option.JsBabyBoomNewsWrapbody') }}</xf:label>
+	</xf:option>
+</xf:checkboxrow>
+]]></template>
   <template type="public" title="widget_js_babyboom_news" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="widget_js_babyboom_news.css" />
 
 <div class="block">
@@ -67,18 +81,4 @@ div.trn_avatar {
 	float: left;
 	padding-right: 5px;
 }]]></template>
-<template type="admin" title="widget_def_options_js_babyboom_newsy" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<hr class="formRowSep" />
-
-<xf:numberboxrow name="options[cachetimeout]" value="{$options.cachetimeout}" min="0" label="{{ phrase('enable_cache_and_cache_for_x_minutes') }}" />
-
-<xf:textboxrow label="{{ phrase('option.JsBabyboomNewsUrl') }}" name="options[url]" value="{$options.url}" placeholder="https://...">
-<xf:explain>{{ phrase('option_explain.JsBabyboomNewsUrl') }}</xf:explain>
-	</xf:textboxrow>
-<xf:checkboxrow>
-	<xf:option name="options[wrapbody]" selected="{$options.wrapbody}"
-		hint="{{ phrase('option_explain.JsBabyBoomNewsWrapbody') }}">
-		<xf:label>{{ phrase('option.JsBabyBoomNewsWrapbody') }}</xf:label>
-	</xf:option>
-</xf:checkboxrow>
-]]></template>
 </templates>
